@@ -7,8 +7,11 @@ var this_week;
 var probability;
 var alternative;
 
-function findTrend() {
+function start() {
 	buy_price = buy_price.value;
+	findTrend();
+}
+function findTrend() {
 	if (buy_price < 90 || buy_price > 110) {
 		alert("Error! Buy Price has to be within 90 and 110 Bells per turnip.");
 	}
@@ -22,13 +25,15 @@ function findTrend() {
 		if (wed_AM > 300) {
 			this_week = "High Spike";
 		}
-		else {
+		else if (wed_AM < 300) {
 			this_week = "Low Spike";
 		}
 	} else if (mon_AM > 100 || mon_AM > buy_price) {
 		this_week = "Random";
 	} else if (mon_AM < 100) {
 		this_week = "Declining";
+	} else {
+		this_week = "Refresh the page and make sure you inputted correct data."
 	}
 	
 	console.log(this_week);

@@ -10,15 +10,6 @@
 <body>
 	<h5>Stalk Market Trend Calculator</h5>
 	<div id="form">
-		<label>Last Week's Trend:
-			<select id="last_week">
-				<option>Please choose an option...</option>
-				<option value="declining">Declining</option>
-				<option value="random">Random</option>
-				<option value="high_spike">High Spike</option>
-				<option value="low">Low Spike</option>
-			</select>
-		</label>
 		<label>This Week's Buy Price:
 			<input type="number" id="buy_price">
 		</label>
@@ -31,15 +22,11 @@
 		<label>Wednesday AM:
 			<input type="number" id="wed_AM">
 		</label>
-		<button id="submit" onclick="findTrend()">Find this week's trend!</button>
+		<button id="submit" onclick="start()">Find this week's trend!</button>
 	</div>
 	<div class="this-week">
 		<h3>This week's trend is...</h3>
-		<h1 id="this-week-trend">High Spike</h1>
-		<!-- <h2>Based on last week, the chance of this spread is: <span id="certainty"></span></h2>
-		<h4>Alternatively:
-			<span id="runner-up"></span>
-		</h4> -->
+		<h1 id="this-week-trend"></h1>
 	</div>
 	<p id="linkout">GitHub: <a href="https://github.com/jefulford" target="_blank">jefulford</a></p>
 	<br>

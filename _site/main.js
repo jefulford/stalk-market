@@ -7,35 +7,11 @@ var this_week;
 var probability;
 var alternative;
 
-var probMatrix = {
-	declining: {
-		"Declining": "Low",
-		"Random": "Average",
-		"Low Spike": "Average",
-		"High Spike": "High"
-	},
-	random: {
-		"Declining": "Low",
-		"Random": "Low",
-		"Low Spike": "Average",
-		"High Spike": "Average"
-	},
-	high_spike: {
-		"Declining": "Low",
-		"Random": "High",
-		"Low Spike": "Low",
-		"High Spike": "Low"
-	},
-	low_spike: {
-		"Declining": "Low",
-		"Random": "High",
-		"Low Spike": "Low",
-		"High Spike": "Average"
-	}
-}
-
-function findTrend() {
+function start() {
 	buy_price = buy_price.value;
+	findTrend();
+}
+function findTrend() {
 	if (buy_price < 90 || buy_price > 110) {
 		alert("Error! Buy Price has to be within 90 and 110 Bells per turnip.");
 	}
@@ -49,23 +25,17 @@ function findTrend() {
 		if (wed_AM > 300) {
 			this_week = "High Spike";
 		}
-		else {
+		else if (wed_AM < 300) {
 			this_week = "Low Spike";
 		}
 	} else if (mon_AM > 100 || mon_AM > buy_price) {
 		this_week = "Random";
 	} else if (mon_AM < 100) {
 		this_week = "Declining";
+	} else {
+		this_week = "Refresh the page and make sure you inputted correct data."
 	}
-	// how likely?
-	last_week = last_week.value;
-
-	// probability = probMatrix[last_week][this_week];
-	// if (probMatrix[last_week].indexOf("High")) {
-	// 	alternative = probMatrix[last_week].indexOf("High");
-	// } else {
-	// 	alternative = probMatrix[last_week].indexOf("Average");
-	// }
+	
 	console.log(this_week);
 	$("#this-week-trend").text(this_week);
 }
