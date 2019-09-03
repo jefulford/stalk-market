@@ -7,33 +7,6 @@ var this_week;
 var probability;
 var alternative;
 
-var probMatrix = {
-	declining: {
-		"Declining": "Low",
-		"Random": "Average",
-		"Low Spike": "Average",
-		"High Spike": "High"
-	},
-	random: {
-		"Declining": "Low",
-		"Random": "Low",
-		"Low Spike": "Average",
-		"High Spike": "Average"
-	},
-	high_spike: {
-		"Declining": "Low",
-		"Random": "High",
-		"Low Spike": "Low",
-		"High Spike": "Low"
-	},
-	low_spike: {
-		"Declining": "Low",
-		"Random": "High",
-		"Low Spike": "Low",
-		"High Spike": "Average"
-	}
-}
-
 function findTrend() {
 	buy_price = buy_price.value;
 	if (buy_price < 90 || buy_price > 110) {
@@ -57,9 +30,6 @@ function findTrend() {
 	} else if (mon_AM < 100) {
 		this_week = "Declining";
 	}
-	// how likely?
-	last_week = last_week.value;
-
 	
 	console.log(this_week);
 	$("#this-week-trend").text(this_week);
