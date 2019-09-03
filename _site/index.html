@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Stalk Market</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<h5>Stalk Market Trend Calculator</h5>
+	<div id="form">
+		<label>Last Week's Trend:
+			<select id="last_week">
+				<option>Please choose an option...</option>
+				<option value="declining">Declining</option>
+				<option value="random">Random</option>
+				<option value="high_spike">High Spike</option>
+				<option value="low">Low Spike</option>
+			</select>
+		</label>
+		<label>This Week's Buy Price:
+			<input type="number" id="buy_price">
+		</label>
+		<label>Monday AM:
+			<input type="number" id="mon_AM">
+		</label>
+		<label>Tuesday AM:
+			<input type="number" id="tues_AM">
+		</label>
+		<label>Wednesday AM:
+			<input type="number" id="wed_AM">
+		</label>
+		<button id="submit" onclick="findTrend()">Find this week's trend!</button>
+	</div>
+	<div class="this-week">
+		<h3>This week's trend is...</h3>
+		<h1 id="this-week-trend">High Spike</h1>
+		<!-- <h2>Based on last week, the chance of this spread is: <span id="certainty"></span></h2>
+		<h4>Alternatively:
+			<span id="runner-up"></span>
+		</h4> -->
+	</div>
+	<p id="linkout">GitHub: <a href="https://github.com/jefulford" target="_blank">jefulford</a></p>
+	<br>
+	<script src="main.js"></script>
+</body>
+</html>
